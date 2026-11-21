@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="pt-MZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0A120E">
+<title>DataSaver MZ: faz os teus dados durarem mais</title>
+<meta name="description" content="Aplicativo para Android que bloqueia anúncios, rastreadores e vídeos para gastares menos dados móveis. Feito em Moçambique. Dois dias grátis.">
+<meta property="og:title" content="DataSaver MZ">
+<meta property="og:description" content="Gasta menos dados móveis. Aplicativo para Android, feito em Moçambique.">
+<meta property="og:image" content="https://0-dr4k3n.github.io/datasaver-mz-download/icone.png">
+<link rel="icon" href="icone.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bitter:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--fundo:#0A120E;--superficie:#101B15;--linha:#22332A;--tinta:#E9F0EA;--suave:#9DB2A4;--verde:#0A7A3E;--verde-claro:#4BD68E;--ouro:#F4C430}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--fundo);color:var(--tinta);font:1.0625rem/1.65 "Atkinson Hyperlegible",system-ui,sans-serif}
+h1,h2,h3{font-family:Bitter,Georgia,serif;line-height:1.14;margin:0;font-weight:700}
+a{color:var(--verde-claro)}
+a:focus-visible,summary:focus-visible,.botao:focus-visible{outline:3px solid var(--ouro);outline-offset:3px}
+.wrap{max-width:66rem;margin:0 auto;padding:0 1.4rem}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-top:1.1rem;padding-bottom:1.1rem}
+.marca{display:flex;align-items:center;gap:.7rem;font-family:Bitter,serif;font-weight:700;font-size:1.2rem;text-decoration:none;color:var(--tinta)}
+.marca img{width:2.3rem;height:2.3rem;border-radius:.55rem}
+nav a{margin-left:1.4rem;color:var(--suave);text-decoration:none;font-size:.98rem}
+nav a:hover{color:var(--tinta)}
+.hero{padding:2.4rem 0 4rem;border-bottom:1px solid var(--linha)}
+.hero .wrap{display:grid;gap:2.6rem;align-items:center}
+h1{font-size:clamp(2.35rem,7vw,3.9rem);letter-spacing:-.015em}
+.lead{font-size:1.2rem;color:#C9D8CD;max-width:34rem;margin:1.3rem 0 1.9rem}
+.botao{display:inline-block;background:var(--verde);color:#fff;font-weight:700;text-decoration:none;padding:1rem 1.7rem;border-radius:.35rem;font-size:1.12rem;border:0;cursor:pointer;font-family:inherit}
+.botao:hover{background:#0E9448}
+.nota{color:var(--suave);font-size:.97rem;margin:.95rem 0 0;max-width:33rem}
+#estado{margin:.9rem 0 0;max-width:33rem;padding:.7rem 1rem;border-left:4px solid var(--verde-claro);background:var(--superficie);font-size:.98rem}
+.palco{background:var(--superficie);border:1px solid var(--linha);border-radius:1rem;padding:1.6rem 1.4rem 1.4rem;justify-self:center;width:100%;max-width:23rem}
+.palco img.ilu{display:block;width:100%;max-width:15rem;height:auto;margin:0 auto 1.2rem}
+.notif{display:flex;align-items:center;gap:.8rem;background:#1A2820;border-radius:.9rem;padding:.75rem .9rem}
+.notif img{width:2.2rem;height:2.2rem;border-radius:.5rem}
+.notif b{display:block;font-size:.95rem}
+.notif span{color:var(--suave);font-size:.92rem}
+.sec{padding:3.5rem 0;border-bottom:1px solid var(--linha)}
+.alt{background:var(--superficie)}
+.sec .wrap{display:grid;gap:1.4rem 3.4rem}
+h2{font-size:clamp(1.7rem,4.2vw,2.3rem)}
+.sec p{margin:0 0 1rem;max-width:40rem}
+.itens{display:grid;gap:0 2.2rem}
+.itens>div{border-top:1px solid var(--linha);padding:1.05rem 0 .5rem}
+.itens h3{font-size:1.2rem;margin-bottom:.35rem}
+.itens p{margin-bottom:.7rem;color:#C9D8CD}
+.aviso{border-left:4px solid var(--ouro);padding:.2rem 0 .2rem 1rem;margin:1.4rem 0 0;color:var(--suave)}
+.planos{list-style:none;margin:1.2rem 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:.9rem;max-width:30rem}
+.planos li{background:var(--fundo);border:1px solid var(--linha);border-radius:.6rem;padding:.9rem 1rem;display:flex;flex-direction:column;gap:.15rem}
+.planos li span:first-child{color:var(--suave);font-size:.97rem}
+.preco{font-family:Bitter,serif;font-weight:700;font-size:1.6rem;line-height:1.2}
+.preco::after{content:"";display:block;width:2.2rem;height:3px;background:var(--ouro);margin-top:.35rem}
+.passos{list-style:none;margin:0;padding:0;counter-reset:p}
+.passos li{counter-increment:p;display:grid;grid-template-columns:2.8rem 1fr;gap:.6rem;margin-bottom:1.2rem;max-width:40rem}
+.passos li::before{content:counter(p);font-family:Bitter,serif;font-weight:700;font-size:1.8rem;line-height:1.15;color:var(--verde-claro)}
+.priv{display:grid;gap:1.4rem;align-items:center}
+.priv img{width:100%;max-width:15rem;height:auto;justify-self:center}
+details{border-top:1px solid var(--linha);max-width:42rem}
+details:last-child{border-bottom:1px solid var(--linha)}
+summary{cursor:pointer;font-weight:700;padding:1rem 0}
+details p{margin:0 0 1rem;color:#C9D8CD}
+#novidades{margin-top:1rem;max-width:33rem;border:0}
+#notas{white-space:pre-line;font-size:.97rem;color:var(--suave)}
+.final{background:#0B3D20;padding:3.8rem 0}
+.final h2{margin-bottom:1.4rem}
+.final .botao{background:#fff;color:#0B3D20}
+.final .botao:hover{background:var(--ouro)}
+.final .nota{color:#BFD9C8}
+footer{padding:2.2rem 0 2.8rem;font-size:.97rem;color:var(--suave)}
+footer a{margin-right:1.3rem}
+@media(min-width:820px){
+ .hero .wrap{grid-template-columns:1.25fr .75fr}
+ .sec .wrap{grid-template-columns:.8fr 1.3fr}
+ .itens{grid-template-columns:1fr 1fr}
+ .priv{grid-template-columns:1fr 14rem}
+}
+@media(max-width:560px){nav a:not(:last-child){display:none}}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap">
+  <a class="marca" href="#"><img src="icone-pequeno.png" alt="" width="37" height="37">DataSaver MZ</a>
+  <nav><a href="#funciona">Como funciona</a><a href="#precos">Preços</a><a href="#instalar">Instalar</a></nav>
+ </div>
+</header>
+
+<main>
+<section class="hero">
+ <div class="wrap">
+  <div>
+   <h1>Faz os teus dados durarem mais.</h1>
+   <p class="lead">O DataSaver MZ é um aplicativo para Android que corta o que gasta dados sem tu pedires: anúncios, rastreadores e vídeos que começam sozinhos. Feito em Moçambique, para quem compra pacotes pequenos e quer que durem.</p>
+   <a class="botao" data-download href="https://github.com/0-DR4K3N/datasaver-mz-download/releases/latest/download/datasaver-mz.apk" download>Descarregar para Android</a>
+   <p id="estado" role="status" hidden>O descarregamento começou. Quando terminar, abre o ficheiro nas Transferências para instalar. <a data-download-link href="https://github.com/0-DR4K3N/datasaver-mz-download/releases/latest/download/datasaver-mz.apk" download>Não começou? Toca aqui.</a></p>
+   <p class="nota" id="info">Para Android 8 ou mais recente. Os primeiros dois dias são grátis.</p>
+   <details id="novidades" hidden><summary>O que mudou nesta versão</summary><p id="notas"></p></details>
+  </div>
+  <div class="palco">
+   <img class="ilu" src="inicio1.png" width="520" height="460" alt="Telemóvel com barras de dados a descer e uma seta verde para baixo">
+   <div class="notif"><img src="icone-pequeno.png" alt="" width="35" height="35"><div><b>DataSaver MZ</b><span>Poupando Internet</span></div></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec">
+ <div class="wrap">
+  <h2>O pacote acaba antes do fim do mês</h2>
+  <div>
+   <p>Compras um pacote, usas o telemóvel como sempre, e em poucos dias o saldo desaparece. Uma parte desse consumo não foi escolha tua.</p>
+   <p>Cada página que abres carrega anúncios. Muitos sites e aplicações enviam, em segundo plano, informação sobre o que fazes para empresas de publicidade. E há vídeos que começam a tocar sozinhos. Tudo isso passa pela tua internet, e és tu que pagas.</p>
+   <p>Quem tem pacotes pequenos sente isto mais. Cada megabyte conta.</p>
+  </div>
+ </div>
+</section>
+
+<section class="sec alt" id="funciona">
+ <div class="wrap">
+  <h2>O que o aplicativo faz</h2>
+  <div>
+   <div class="itens">
+    <div><h3>Corta anúncios e rastreadores</h3><p>Reconhece os endereços de publicidade e de rastreamento e não deixa o telemóvel ligar-se a eles. Funciona nos sites e nas aplicações, não só no navegador.</p></div>
+    <div><h3>Modo Economia Extrema</h3><p>Bloqueia vídeos de serviços conhecidos, como o YouTube, a Netflix e os vídeos do Facebook. É para os dias em que precisas mesmo de poupar. Alguns vídeos deixam de funcionar, e desligas quando quiseres.</p></div>
+    <div><h3>Mostra para onde vão os dados</h3><p>Vês quanto gastaste hoje e nos últimos sete dias, e que aplicações gastam mais.</p></div>
+    <div><h3>Só nos dados móveis</h3><p>No Wi-Fi o aplicativo faz uma pausa e volta sozinho quando regressas aos dados móveis.</p></div>
+    <div><h3>Sem cadastro</h3><p>Não crias conta. Instalas, aceitas as permissões e a poupança liga-se.</p></div>
+    <div><h3>Pagas só o tempo que precisas</h3><p>De seis horas a um mês, no próprio aplicativo.</p></div>
+   </div>
+   <p class="aviso">Quanto poupas depende do que usas. Quem navega em muitos sites com anúncios poupa mais do que quem só usa o WhatsApp. O aplicativo mostra uma estimativa, não uma medição exacta.</p>
+  </div>
+ </div>
+</section>
+
+<section class="sec">
+ <div class="wrap">
+  <div class="priv" style="grid-column:1/-1">
+   <div>
+    <h2>O teu tráfego fica no teu telemóvel</h2>
+    <p style="margin-top:1.2rem">O aplicativo usa uma ligação VPN criada no próprio aparelho, só para filtrar os endereços de anúncios. O que escreves, vês e envias não passa pelos nossos servidores. O único contacto com o servidor é para validar a licença e os pagamentos.</p>
+   </div>
+   <img src="inicio3.png" width="520" height="460" alt="Telemóvel com um cadeado verde">
+  </div>
+ </div>
+</section>
+
+<section class="sec alt" id="precos">
+ <div class="wrap">
+  <h2>Quanto custa</h2>
+  <div>
+   <p>Os primeiros dois dias são grátis, sem pagares nada. Depois escolhes o tempo de que precisas e pagas dentro do aplicativo, por M-Pesa, e-Mola ou IZI.</p>
+   <ul class="planos" id="planos">
+    <li><span>6 horas</span><span class="preco">10 MZN</span></li>
+    <li><span>24 horas</span><span class="preco">15 MZN</span></li>
+    <li><span>1 semana</span><span class="preco">80 MZN</span></li>
+    <li><span>1 mês</span><span class="preco">300 MZN</span></li>
+   </ul>
+   <p class="nota">Os preços podem mudar. Vale o que aparece no aplicativo na hora de pagar.</p>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="instalar">
+ <div class="wrap">
+  <h2>Como instalar</h2>
+  <div>
+   <ol class="passos">
+    <li><span>Toca em Descarregar e espera o ficheiro acabar.</span></li>
+    <li><span>Quando acabar, abre o ficheiro. Se o Android perguntar, permite instalar aplicações a partir do navegador que estás a usar.</span></li>
+    <li><span>Abre o DataSaver MZ, passa pelos três ecrãs e aceita as permissões que ele pede. Cada uma é explicada na hora.</span></li>
+    <li><span>Pronto. A poupança liga-se sozinha e o teste de dois dias começa.</span></li>
+   </ol>
+   <p class="aviso">O Android pode avisar que o ficheiro não vem da Play Store. É normal, porque o aplicativo ainda não está lá. Descarrega-o só desta página.</p>
+  </div>
+ </div>
+</section>
+
+<section class="sec alt">
+ <div class="wrap">
+  <h2>Perguntas frequentes</h2>
+  <div>
+   <details><summary>O aplicativo gasta muita bateria?</summary><p>Pouca. Ele só trata dos pedidos de endereços, não analisa o resto do tráfego. A notificação fixa que vês é obrigatória no Android para manter a poupança activa.</p></details>
+   <details><summary>Pede uma VPN. É seguro?</summary><p>É uma VPN local, criada no teu telemóvel só para filtrar endereços de anúncios. Não envia o teu tráfego para nenhum servidor nosso. Podes ler tudo na Política de Privacidade.</p></details>
+   <details><summary>Posso usar num iPhone?</summary><p>Não. Por agora só funciona em Android 8 ou mais recente.</p></details>
+   <details><summary>Um site ou aplicação deixou de funcionar. E agora?</summary><p>Pode acontecer quando um endereço bloqueado era necessário. Desliga a optimização por um momento e avisa-nos. Podemos libertar esse endereço sem precisares de actualizar o aplicativo.</p></details>
+   <details><summary>Como actualizo para uma versão nova?</summary><p>Volta a esta página, descarrega a versão mais recente e instala por cima. Não perdes nada.</p></details>
+  </div>
+ </div>
+</section>
+</main>
+
+<section class="final">
+ <div class="wrap">
+  <h2>Experimenta dois dias grátis.</h2>
+  <a class="botao" data-download href="https://github.com/0-DR4K3N/datasaver-mz-download/releases/latest/download/datasaver-mz.apk" download>Descarregar para Android</a>
+  <p class="nota" id="info2">Para Android 8 ou mais recente.</p>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  <a id="termos" href="https://datasaver-mz-api.venon2300.workers.dev/terms">Termos e Condições</a>
+  <a id="privacidade" href="https://datasaver-mz-api.venon2300.workers.dev/privacy">Política de Privacidade</a>
+  <a id="contacto" href="#" hidden>Fala connosco</a>
+  <p>DataSaver MZ, feito em Moçambique.</p>
+ </div>
+</footer>
+
+<iframe id="dl-frame" title="descarga" hidden></iframe>
+
+<script>
+/* Para mudar o site, edita só este bloco. */
+var C = {
+  repo: '0-DR4K3N/datasaver-mz-download',   /* utilizador/repositório do GitHub com as versões */
+  arquivo: 'datasaver-mz.apk',                /* nome do ficheiro em cada versão publicada */
+  api: 'https://datasaver-mz-api.venon2300.workers.dev',
+  contacto: ''                                /* ex.: 'https://wa.me/2588XXXXXXXX' */
+};
+(function () {
+  var link = 'https://github.com/' + C.repo + '/releases/latest/download/' + C.arquivo;
+  var botoes = document.querySelectorAll('[data-download]');
+  [].forEach.call(botoes, function (a) { a.href = link; });
+  document.querySelector('[data-download-link]').href = link;
+  document.getElementById('termos').href = C.api + '/terms';
+  document.getElementById('privacidade').href = C.api + '/privacy';
+  if (C.contacto) { var c = document.getElementById('contacto'); c.href = C.contacto; c.hidden = false; }
+
+  /* O descarregamento começa aqui mesmo, sem sair da página. */
+  [].forEach.call(botoes, function (b) {
+    var texto = b.textContent;
+    b.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.getElementById('dl-frame').src = link;
+      document.getElementById('estado').hidden = false;
+      b.textContent = 'A descarregar...';
+      setTimeout(function () { b.textContent = texto; }, 5000);
+    });
+  });
+
+  fetch('https://api.github.com/repos/' + C.repo + '/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
+    .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+    .then(function (d) {
+      var ap = (d.assets || []).filter(function (a) { return a.name === C.arquivo; })[0];
+      var mb = ap ? Math.round(ap.size / 1048576) : 0;
+      var data = new Date(d.published_at).toLocaleDateString('pt-PT', { day: 'numeric', month: 'long', year: 'numeric' });
+      var v = String(d.tag_name || '').replace(/^v/i, '');
+      document.getElementById('info').textContent = 'Versão ' + v + ', publicada a ' + data + (mb ? ' (' + mb + ' MB)' : '') + '. Para Android 8 ou mais recente. Os primeiros dois dias são grátis.';
+      document.getElementById('info2').textContent = 'Versão ' + v + (mb ? ', ' + mb + ' MB' : '') + '. Para Android 8 ou mais recente.';
+      if (d.body && d.body.trim()) { document.getElementById('notas').textContent = d.body.trim().slice(0, 700); document.getElementById('novidades').hidden = false; }
+    }).catch(function () {});
+
+  fetch(C.api + '/v1/config')
+    .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+    .then(function (cfg) {
+      if (!cfg.plans || !cfg.plans.length) return;
+      var ul = document.getElementById('planos'); ul.textContent = '';
+      cfg.plans.forEach(function (p) {
+        var li = document.createElement('li'), a = document.createElement('span'), b = document.createElement('span');
+        a.textContent = p.name; b.className = 'preco'; b.textContent = p.price + ' MZN';
+        li.appendChild(a); li.appendChild(b); ul.appendChild(li);
+      });
+    }).catch(function () {});
+})();
+</script>
+</body>
+</html>
